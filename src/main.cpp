@@ -11,7 +11,6 @@ using namespace std;
 argsutil::argparser get_args(int argc, char* argv[]) {
     auto parser = argsutil::argparser("UCMCTrack argument parser.");
 
-    /* example -> ./yolo.exe ./yolo.engine ./nuscenes_mini.mp4 --pause --loop --no-label */
     parser.add_argument<string>("result_file", "result file path")
           .add_option<string>("-f", "--file", "track config file", "cfg/track.yaml")
           .add_option<bool>("-p", "--pause", "pause playing at first. default is false", false)
@@ -86,25 +85,7 @@ int main(int argc, char* argv[]) {
     track_params.Ki = track_cfg["Ki"].as<std::vector<double>>();
     track_params.Ko = track_cfg["Ko"].as<std::vector<double>>();
 
-    // std::cout << Ki.size() << " " << Ko.size() << std::endl;
-    
-
     UCMC::Tracker tracker(track_params);
-
-    /**
-     * the following code is for debug
-    */
-
-    // Eigen::Vector2d y;
-    // Eigen::Matrix2d R;
-    // y.setZero();
-    // R.setZero();
-    // tracker.mapper.map_to(cv::Rect(730, 136, 9, 29), y, R);
-    // INFO << y << ENDL;
-    // INFO << R << ENDL;
-    // return 0;
-    
-    /* ---------------------------------- */
 
     cv::Mat frame;
     int key = -1;
@@ -116,7 +97,7 @@ int main(int argc, char* argv[]) {
     for(auto preds: results) {
         cap >> frame;
         if (frame.empty()) {
-            cout << "frame is empty, exit." << endl;
+            // cout << "frame is empty, exit." << endl;
             cv::destroyAllWindows();
             break;
         }
