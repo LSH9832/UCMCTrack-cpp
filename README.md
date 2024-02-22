@@ -1,5 +1,8 @@
 # UCMCTrack的c++部署
 
+![demo](https://github.com/LSH9832/UCMCTrack-cpp/assets/69880398/f732ec98-8449-4683-8f1a-a57cc9233416)
+
+
 ## 致谢
 
 首先感谢大佬[corfyi](https://github.com/corfyi)将此多目标跟踪算法开源，但在[issues](https://github.com/corfyi/UCMCTrack/issues/18)中看出大佬是有c++版本的代码的，却并没有开源。本人水平有限，工作之余花费4天时间将原项目（[UCMCTrack](https://github.com/corfyi/UCMCTrack)）由python转为c++代码，难免出错，如发现bug或算法逻辑不对的地方欢迎在issues中提出。
