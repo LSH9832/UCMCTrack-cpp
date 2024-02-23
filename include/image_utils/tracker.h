@@ -309,9 +309,18 @@ namespace UCMC {
         Eigen::MatrixXd KiKo;
 
     public:
+        
+        bool debug=false;
+        
         Mapper() {};
 
-        Mapper(Eigen::Matrix<double, 3, 4> Ki, Eigen::Matrix4d Ko){
+        Mapper(std::vector<double>& _Ki, std::vector<double>& _Ko) {
+            Eigen::Map<Eigen::Matrix<double, 4, 3>> KiT(_Ki.data());
+            Eigen::Map<Eigen::Matrix4d> KoT(_Ko.data());
+
+            Eigen::Matrix<double, 3, 4> Ki = KiT.transpose();
+            Eigen::Matrix4d Ko = KoT.transpose();
+
             A.setZero();
             InvA.setZero();
             KiKo = Ki * Ko;
@@ -325,20 +334,14 @@ namespace UCMC {
             }
 
             InvA = A.inverse();
-            
-            // debug
-            // INFO << "A: " << A << ENDL;
-            // INFO << "InvA: " << InvA << ENDL;
-            // INFO << "Ki: " << Ki << ENDL;
-            // INFO << "Ko: " << Ko << ENDL;
-            // INFO << "KiKo: " << KiKo << ENDL;
-        }
 
-        Mapper(std::vector<double>& _Ki, std::vector<double>& _Ko) {
-            Eigen::Map<Eigen::Matrix<double, 4, 3>> Ki(_Ki.data());
-            Eigen::Map<Eigen::Matrix4d> Ko(_Ko.data());
-
-            Mapper(Ki.transpose(), Ko.transpose());
+            if (debug) {
+                INFO << "A: " << A << ENDL;
+                INFO << "InvA: " << InvA << ENDL;
+                INFO << "Ki: " << Ki << ENDL;
+                INFO << "Ko: " << Ko << ENDL;
+                INFO << "KiKo: " << KiKo << ENDL;
+            }
         }
 
         std::vector<double> uvError(cv::Rect box) {
@@ -423,6 +426,7 @@ namespace UCMC {
     public:
 
         Mapper mapper;
+        bool debug=false;
 
         Tracker(Params& params);
 
@@ -510,7 +514,7 @@ namespace UCMC {
                     cost_matrix(i, j) = trackers[trackidx[j]].distance(
                         dets[det_idx].y, 
                         dets[det_idx].R,
-                        false
+                        i+j==0 && debug
                     );
                 }
             }
@@ -573,7 +577,7 @@ namespace UCMC {
                     cost_matrix(i, j) = trackers[trk_idx].distance(
                         dets[det_idx].y, 
                         dets[det_idx].R,
-                        false
+                        i+j==0 && debug
                     );
                 }
             }
@@ -625,7 +629,7 @@ namespace UCMC {
                 cost_matrix(i, j) = trackers[trk_idx].distance(
                     dets[det_idx].y, 
                     dets[det_idx].R,
-                    false
+                    i+j==0 && debug
                 );
             }
         }
