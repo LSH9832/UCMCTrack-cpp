@@ -14,6 +14,7 @@ argsutil::argparser get_args(int argc, char* argv[]) {
     parser.add_argument<string>("result_file", "result file path")
           .add_option<string>("-f", "--file", "track config file", "cfg/track.yaml")
           .add_option<bool>("-p", "--pause", "pause playing at first. default is false", false)
+          // .add_option<bool>("-d", "--debug", "show some debug info", false)
           .add_help_option()
           .parse(argc, argv);
     
@@ -86,6 +87,8 @@ int main(int argc, char* argv[]) {
     track_params.Ko = track_cfg["Ko"].as<std::vector<double>>();
 
     UCMC::Tracker tracker(track_params);
+    // tracker.debug = args.get_option_bool("--debug");
+    // tracker.mapper.debug = tracker.debug;
 
     cv::Mat frame;
     int key = -1;
@@ -133,7 +136,7 @@ int main(int argc, char* argv[]) {
     cv::destroyAllWindows();
     printf("%saverage latency: %.2f ms%s\n", 
            GREEN, 
-           total_latency / results.size(),
+           total_latency / MAX(1, frame_id),
            END);
     return 0;
 }
