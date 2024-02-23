@@ -14,6 +14,11 @@
 
 ![ucmcspeed](https://github.com/LSH9832/UCMCTrack-cpp/assets/69880398/0594d9c0-ef21-492e-ae78-ac267ba9be19)
 
+即使在arm平台（香橙派，RK3588芯片）速度也基本没差多少，根本不吃算力！
+
+![ucmcspeedrk3588](https://github.com/LSH9832/UCMCTrack-cpp/assets/69880398/7943d9ec-0f1a-447b-80d7-a8d8ba2b8820)
+
+
 ## 依赖库
 
 - libopencv-dev
