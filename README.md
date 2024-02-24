@@ -49,7 +49,7 @@ make
 ./ucmc_track -?
 ```
 
-## 调整内外参矩阵
+## 调整外参矩阵
 ```
 python scripts/estimate_cam_param.py --img /path/to/your/img.jpg \    # 使用图像文件
                                      --vid /path/to/your/video.mp4 \  # 或者使用视频文件，上面选项就不要写了
