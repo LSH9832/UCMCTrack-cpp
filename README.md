@@ -48,3 +48,12 @@ make
 # 看具体用法
 ./ucmc_track -?
 ```
+
+## 调整内外参矩阵
+```
+python scripts/estimate_cam_param.py --img /path/to/your/img.jpg \    # 使用图像文件
+                                     --vid /path/to/your/video.mp4 \  # 或者使用视频文件，上面选项就不要写了
+                                     --id number_of_frame_id \        # 使用视频文件的第number_of_frame_id帧
+                                     --cam_para cfg/track.yaml \      # 参数文件
+                                     --test-only                      # 仅测试，不修改参数文件内容    
+```
