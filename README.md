@@ -14,7 +14,7 @@
 
 ![ucmcspeed](https://github.com/LSH9832/UCMCTrack-cpp/assets/69880398/0594d9c0-ef21-492e-ae78-ac267ba9be19)
 
-即使在arm平台（香橙派，RK3588芯片）速度也基本没差多少，根本不吃算力！
+即使在arm平台（香橙派，RK3588芯片）速度也基本没差多少（CPU利用率10%以下），但和神经网络一起跑的时候速度有明显减慢，CPU平均利用率45%时延迟约8毫秒，
 
 ![ucmcspeedrk3588](https://github.com/LSH9832/UCMCTrack-cpp/assets/69880398/7943d9ec-0f1a-447b-80d7-a8d8ba2b8820)
 
