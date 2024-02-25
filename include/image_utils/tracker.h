@@ -371,7 +371,7 @@ namespace UCMC {
             double gamma = 1. / b(2, 0);
 
             Eigen::Matrix2d C = gamma * InvA.block(0, 0, 2, 2)
-                              - (gamma * gamma) * b.block(0, 0, 2, 1) * InvA.block(2, 0, 3, 2);
+                              - (gamma * gamma) * b.block(0, 0, 2, 1) * InvA.block(2, 0, 1, 2);
             
             // INFO << "C:\n" << C << ENDL;
             // INFO << "sigma_uv:\n" << sigma_uv << ENDL;
