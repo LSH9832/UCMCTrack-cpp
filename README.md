@@ -1,5 +1,11 @@
 # UCMCTrack C++ Deployment
 
+<div align="center">
+
+[简体中文](README_CN.md)
+
+</div>
+
 ![demo](https://github.com/LSH9832/UCMCTrack-cpp/assets/69880398/f732ec98-8449-4683-8f1a-a57cc9233416)
 
 
