@@ -9,6 +9,16 @@
 ![demo](https://github.com/LSH9832/UCMCTrack-cpp/assets/69880398/f732ec98-8449-4683-8f1a-a57cc9233416)
 
 
+## Before using
+
+Please read [the paper](https://arxiv.org/abs/2312.08952) first!
+
+Please read [the paper](https://arxiv.org/abs/2312.08952) first!
+
+Please read [the paper](https://arxiv.org/abs/2312.08952) first!
+
+**DO NOT USE THIS PROJECT IF YOU KNOW NOTHING ABOUT THIS ALGORITHM!**
+
 ## Acknowledgements
 
 First and foremost, I would like to thank [corfyi](https://github.com/corfyi) for open-sourcing this multi-object tracking algorithm. However, as mentioned in the issues, while the author does have a C++ version of the code, it has not been made public. Despite my limited expertise, I spent four days converting the original project ([UCMCTrack](https://github.com/corfyi/UCMCTrack)) from Python to C++ code. And if you find any bugs or inconsistencies in the algorithm logic, please feel free to raise them in the issues section.
