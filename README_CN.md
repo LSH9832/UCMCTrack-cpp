@@ -2,6 +2,15 @@
 
 ![demo](https://github.com/LSH9832/UCMCTrack-cpp/assets/69880398/f732ec98-8449-4683-8f1a-a57cc9233416)
 
+## 在使用之前
+
+用之前请先阅读[原论文](https://arxiv.org/abs/2312.08952)！
+
+用之前请先阅读[原论文](https://arxiv.org/abs/2312.08952)！
+
+用之前请先阅读[原论文](https://arxiv.org/abs/2312.08952)！
+
+**不要在完全不了解算法原理的情况下使用本项目，效果不好概不负责，谢谢！**
 
 ## 致谢
 
